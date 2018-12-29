@@ -41,5 +41,5 @@ def print_latex_version(results, method, FILTER_SECTIONS):
 
 
 if __name__ == "__main__":
-    model, crap = load_models(mode='asoif_fastText', emb_type='bin')
+    model, crap = load_models(mode='witcher', emb_type='bin')
     print('\n\nMODEL', model)

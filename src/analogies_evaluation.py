@@ -1,9 +1,10 @@
 from __future__ import division
-import pickle
-from pprint import pprint
-from config import * 
-from w2v_dataset_helpers import load_models, print_details, print_latex_version
+
 from collections import OrderedDict
+from pprint import pprint
+
+from config import *
+from w2v_dataset_helpers import load_models, print_latex_version
 
 """
     evaluation script for the analogies task 
@@ -15,7 +16,7 @@ from collections import OrderedDict
 """
 
 # read the doesnt_match evaluation data from the path defined in config.py
-analogies_data = open(ANALOGIES_FILE).readlines()
+analogies_data = open(ANALOGIES_FILE, encoding="utf8").readlines()
 
 
 # evaluate each of the embedding methods defined in config.py
@@ -44,7 +45,7 @@ def evaluate_analogies(method, emb_type):
 if __name__ == "__main__":
 
     # evaluate each of the embedding methods defined in config.py
-    for (method,emb_type) in METHODS:
+    for (method, emb_type) in METHODS:
         results = evaluate_analogies(method, emb_type)
 
         pprint(dict(results))

@@ -19,7 +19,7 @@ from w2v_dataset_helpers import load_models, print_details, print_latex_version
 
 
 # read the doesnt_match evaluation data from the path defined in config.py
-doesnt_match_data = open(DOESNT_MATCH_FILE).readlines()
+doesnt_match_data = open(DOESNT_MATCH_FILE, encoding="utf8").readlines()
 
 def evaluate_doesnt_match(method, emb_type):
 
@@ -66,7 +66,7 @@ def evaluate_doesnt_match(method, emb_type):
         task_terms = line_list[:sep_i]
         correct_outlier = line_list[sep_i+1:][0]
 
-        found_outlier = model.doesnt_match( task_terms ) 
+        found_outlier = model.doesnt_match( task_terms )
 
         if found_outlier == correct_outlier:
             correct += 1

@@ -8,15 +8,21 @@
 """
 
 
-BOOK_SERIES="ASIOF"
+BOOK_SERIES = "WITCHER"
 
-MODEL_PATH="../models/"
+MODEL_PATH = "../models/"
 
 
 if BOOK_SERIES == "ASIOF":
     ## if you have a binary model, set the second value to "bin", else to "vec"
     METHODS = [ 
-        ('asoif_fastText', 'vec'), # default and: -epoch 25 -ws 12
+        ('asoif_fastText', 'vec'),  # default and: -epoch 25 -ws 12
+    ]
+
+if BOOK_SERIES == "WITCHER":
+    ## if you have a binary model, set the second value to "bin", else to "vec"
+    METHODS = [
+        ('witcher', 'vec'),  # default and: -epoch 25 -ws 12
     ]
 
 # -----------------------------------------------------
@@ -32,3 +38,13 @@ if BOOK_SERIES == "ASIOF":
     ### which sections to show in the paper..
     ANALOGIES_SECTIONS = ['firstname-lastname', 'child-father', 'husband-wife', 'geo-name-location', 'houses-seats', 'total']
     DOESNT_MATCH_SECTIONS = [': family-siblings',  ': names-of-houses', ': archmaesters', ': rivers', ': free cities', 'TOTAL']
+
+if BOOK_SERIES == "WITCHER":
+    PRINT_DETAILS = False ## verbose debugging of eval results
+
+    DOESNT_MATCH_FILE = "../datasets/questions_witcher_dosent_match.txt"
+    ANALOGIES_FILE = "../datasets/questions_witcher_analogies.txt"
+
+    ### which sections to show in the paper..
+    ANALOGIES_SECTIONS = ['firstname-lastname', 'geo-name-location', 'name-race', 'name-team']
+    DOESNT_MATCH_SECTIONS = [': witchers',  ': countries', ': mosters']

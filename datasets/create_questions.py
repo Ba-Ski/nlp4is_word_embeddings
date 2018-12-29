@@ -126,8 +126,11 @@ def create_dataset(sourcefile=None, outfile=None, mode=None):
 
 if __name__ == "__main__":
 
-    create_dataset(sourcefile="soiaf_analogies.txt",      outfile="questions_soiaf_analogies.txt",   mode="analogies")
-    create_dataset(sourcefile="soiaf_doesnt_match.txt", outfile="questions_soiaf_doesnt_match.txt", mode="doesnt_match")
+    # create_dataset(sourcefile="soiaf_analogies.txt",      outfile="questions_soiaf_analogies.txt",   mode="analogies")
+    # create_dataset(sourcefile="soiaf_doesnt_match.txt", outfile="questions_soiaf_doesnt_match.txt", mode="doesnt_match")
+
+    create_dataset(sourcefile="witcher_analogies.txt",      outfile="questions_witcher_analogies.txt",   mode="analogies")
+    create_dataset(sourcefile="witcher_dosent_match.txt", outfile="questions_witcher_dosent_match.txt", mode="doesnt_match")
 
     #create_dataset(sourcefile="hp_analogies.txt",      outfile="questions_hp_analogies.txt",   mode="analogies")
     #create_dataset(sourcefile="hp_doesnt_match.txt", outfile="questions_hp_doesnt_match.txt", mode="doesnt_match")
